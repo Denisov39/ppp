@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.ppp.web.two.TwoEdit"
+        datasource="twoDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.ppp.web.two">
+    <dsContext>
+        <datasource id="twoDs"
+                    class="com.company.ppp.entity.Two"
+                    view="_local"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="twoDs">
+            <column width="250px">
+                <field property="category"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

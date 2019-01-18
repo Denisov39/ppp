@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.ppp.web.two.TwoBrowse"
+        focusComponent="twoesTable"
+        lookupComponent="twoesTable"
+        messagesPack="com.company.ppp.web.two">
+    <dsContext>
+        <groupDatasource id="twoesDs"
+                         class="com.company.ppp.entity.Two"
+                         view="_local">
+            <query>
+                <![CDATA[select e from ppp$Two e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="twoesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="twoesTable"
+                datasource="twoesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="twoesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="category"/>
+            </columns>
+            <rows datasource="twoesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="twoesTable.create"/>
+                <button id="editBtn"
+                        action="twoesTable.edit"/>
+                <button id="removeBtn"
+                        action="twoesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

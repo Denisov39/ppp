@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+    <view class="com.company.ppp.entity.First"
+          extends="_local"
+          name="first-view">
+        <property name="cat"
+                  view="_local"/>
+    </view>
+</views>

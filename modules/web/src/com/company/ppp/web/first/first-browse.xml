@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.ppp.web.first.FirstBrowse"
+        focusComponent="firstsTable"
+        lookupComponent="firstsTable"
+        messagesPack="com.company.ppp.web.first">
+    <dsContext>
+        <groupDatasource id="firstsDs"
+                         class="com.company.ppp.entity.First"
+                         view="first-view">
+            <query>
+                <![CDATA[select e from ppp$First e]]>
+            </query>
+        </groupDatasource>
+        <collectionDatasource id="twoesDs"
+                              class="com.company.ppp.entity.Two"
+                              view="_local">
+            <query>
+                <![CDATA[select e from ppp$Two e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="firstsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="firstsTable"
+                datasource="firstsDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="firstsTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+                <column id="cat"/>
+            </columns>
+            <rows datasource="firstsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="firstsTable.create"/>
+                <button id="editBtn"
+                        action="firstsTable.edit"/>
+                <button id="removeBtn"
+                        action="firstsTable.remove"/>
+                <lookupField optionsDatasource="twoesDs"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

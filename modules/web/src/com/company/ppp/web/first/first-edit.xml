@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.ppp.web.first.FirstEdit"
+        datasource="firstDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.ppp.web.first">
+    <dsContext>
+        <datasource id="firstDs"
+                    class="com.company.ppp.entity.First"
+                    view="first-view"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="firstDs">
+            <column width="250px">
+                <field property="name"/>
+                <field property="cat"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

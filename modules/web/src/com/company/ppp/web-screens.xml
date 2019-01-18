@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
+    <screen id="ppp$First.browse"
+            template="com/company/ppp/web/first/first-browse.xml"/>
+    <screen id="ppp$First.edit"
+            template="com/company/ppp/web/first/first-edit.xml"/>
+    <screen id="ppp$Two.browse"
+            template="com/company/ppp/web/two/two-browse.xml"/>
+    <screen id="ppp$Two.edit"
+            template="com/company/ppp/web/two/two-edit.xml"/>
+</screen-config>
